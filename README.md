@@ -22,9 +22,8 @@ Lumin.ary is a modern, elegant, and fully responsive landing page designed to sh
 * CSS3
 * Vanilla JavaScript
 * Google Fonts
-
-  * Cormorant Garamond
-  * DM Sans
+* Cormorant Garamond
+* DM Sans
 
 ## 📂 Project Structure
 
@@ -41,7 +40,7 @@ focusly/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/focusly.git
+https://github.com/anasghuman07/luminary-frontend
 ```
 
 ### 2. Open the Project
@@ -49,7 +48,7 @@ git clone https://github.com/yourusername/focusly.git
 Simply open the `index.html` file in your browser.
 
 ```bash
-cd focusly
+cd Lumin.ary
 ```
 
 Then double-click:
@@ -119,4 +118,4 @@ Created with passion for clean design, user experience, and modern web developme
 
 ---
 
-**Focusly — Stay focused. Achieve more.**
+**Lumin.ary — Stay focused. Achieve more.**
