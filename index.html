@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luminary — Find Your Direction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     FIXED NAVBAR
+══════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo" onclick="goTo('home')">Lumin<span>·</span>ary</div>
+
+  <ul class="nav-links">
+    <li><a id="nl-home"    onclick="goTo('home')"    class="active">Home</a></li>
+    <li><a id="nl-explore" onclick="goTo('explore')">Explore</a></li>
+    <li><a id="nl-pricing" onclick="goTo('pricing')">Pricing</a></li>
+    <li><a id="nl-about"   onclick="goTo('about')">About</a></li>
+    <li><a id="nl-contact" onclick="goTo('contact')">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="btn btn-ghost" onclick="openModal('modal-login')">Log In</button>
+    <button class="btn btn-gold"  onclick="openModal('modal-signup')">Sign Up</button>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="home-hero">
+    <div class="hero-inner">
+      <!-- Left: headline -->
+      <div class="hero-left">
+        <p class="eyebrow fade-up">Your journey begins here</p>
+        <h1 class="hero-h1 fade-up">
+          See the world<br>from a <em>higher</em><br>perspective.
+        </h1>
+        <p class="hero-sub fade-up">
+          Luminary guides you through breathtaking landscapes and hidden paths,
+          turning every adventure into a story worth telling.
+        </p>
+        <button class="btn btn-ghost fade-up" onclick="goTo('explore')" style="align-self:flex-start;">
+          Browse Destinations →
+        </button>
+      </div>
+
+      <!-- Right: Get Started card -->
+      <div class="hero-right fade-up">
+        <div class="hero-cta-card">
+          <h3>Ready to explore?</h3>
+          <p>Join thousands discovering the world differently.</p>
+          <button class="btn btn-cta" onclick="openModal('modal-signup')">Get Started Here</button>
+          <div class="or-divider">or</div>
+          <button class="btn btn-ghost" style="width:100%;" onclick="openModal('modal-login')">
+            Already a member? Log In
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOME SECTIONS PREVIEW ── -->
+  <div class="home-sections">
+
+    <!-- EXPLORE PREVIEW -->
+    <div class="section-header">
+      <span class="section-tag">Destinations</span>
+      <h2 class="section-title">Explore the <em>extraordinary</em></h2>
+      <p class="section-desc">Hand-picked adventures across mountains, coastlines, forests, and ancient cities.</p>
+      <span class="section-link" onclick="goTo('explore')">View all destinations</span>
+    </div>
+
+    <div class="explore-preview">
+      <div class="cards-row">
+        <div class="dest-card" onclick="goTo('explore')">
+          <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80');">
+            <span class="dest-tag">Mountain</span>
+          </div>
+          <div class="dest-body">
+            <h4>The Alpine Circuit</h4>
+            <p>Seven peaks, four countries, one unforgettable loop through the Alps.</p>
+          </div>
+        </div>
+        <div class="dest-card" onclick="goTo('explore')">
+          <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80');">
+            <span class="dest-tag">Coastal</span>
+          </div>
+          <div class="dest-body">
+            <h4>Coastal Wanderer</h4>
+            <p>Follow the wild Atlantic coastline where cliffs meet the ocean dramatically.</p>
+          </div>
+        </div>
+        <div class="dest-card" onclick="goTo('explore')">
+          <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80');">
+            <span class="dest-tag">Forest</span>
+          </div>
+          <div class="dest-body">
+            <h4>Ancient Forest Trail</h4>
+            <p>Walk beneath thousand-year-old trees in one of the last primeval forests.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- PRICING PREVIEW -->
+    <div class="section-header">
+      <span class="section-tag">Plans &amp; Pricing</span>
+      <h2 class="section-title">Simple, <em>honest</em> pricing</h2>
+      <p class="section-desc">No hidden fees. Pick the plan that fits your adventure style.</p>
+      <span class="section-link" onclick="goTo('pricing')">See all plans</span>
+    </div>
+
+    <div class="pricing-preview">
+      <div class="plans-row">
+        <div class="plan-card">
+          <div class="plan-name">Explorer</div>
+          <div class="plan-price"><sup>$</sup>0</div>
+          <div class="plan-period">forever free</div>
+          <ul class="plan-features">
+            <li>10 destinations</li>
+            <li>Basic trail maps</li>
+            <li>Community forums</li>
+          </ul>
+          <button class="plan-btn" onclick="openModal('modal-signup')">Get Started Free</button>
+        </div>
+        <div class="plan-card featured">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-name">Adventurer</div>
+          <div class="plan-price"><sup>$</sup>12</div>
+          <div class="plan-period">per month</div>
+          <ul class="plan-features">
+            <li>Unlimited destinations</li>
+            <li>Offline maps &amp; guides</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="plan-btn" onclick="toast('Adventurer plan selected! 🚀')">Start Free Trial</button>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Luminary Pro</div>
+          <div class="plan-price"><sup>$</sup>29</div>
+          <div class="plan-period">per month</div>
+          <ul class="plan-features">
+            <li>Everything in Adventurer</li>
+            <li>Personal guide matching</li>
+            <li>Concierge booking</li>
+          </ul>
+          <button class="plan-btn" onclick="toast('Pro plan selected! 🌟')">Go Pro</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ABOUT PREVIEW -->
+    <div class="section-header">
+      <span class="section-tag">Our Story</span>
+      <h2 class="section-title">Built by explorers, <em>for explorers</em></h2>
+      <span class="section-link" onclick="goTo('about')">Meet the team</span>
+    </div>
+
+    <div class="about-preview">
+      <div class="about-text">
+        <p>Luminary began on a rain-soaked ridge in Patagonia. A group of friends, lost and laughing, decided the world needed better guides — ones built on honesty, depth, and genuine local knowledge.</p>
+        <p>Since 2021, we've helped over 180,000 explorers find their way — from the Dolomites to the alleys of Marrakech. Every route has been walked, paddled, or climbed by a real person who cares about sharing it honestly.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="stat-num">180k</div><div class="stat-lbl">Explorers</div></div>
+        <div class="stat-box"><div class="stat-num">94</div><div class="stat-lbl">Countries</div></div>
+        <div class="stat-box"><div class="stat-num">4,200+</div><div class="stat-lbl">Routes</div></div>
+        <div class="stat-box"><div class="stat-num">4.9★</div><div class="stat-lbl">Avg Rating</div></div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- CONTACT PREVIEW -->
+    <div class="section-header">
+      <span class="section-tag">Get in Touch</span>
+      <h2 class="section-title">We'd love to <em>hear from you</em></h2>
+      <span class="section-link" onclick="goTo('contact')">Full contact page</span>
+    </div>
+
+    <div class="contact-preview">
+      <div class="contact-info-panel">
+        <h3>Let's start a conversation</h3>
+        <p>We're a small, passionate team — expect a real reply within 24 hours.</p>
+        <div class="contact-items">
+          <div class="c-item">
+            <div class="c-icon">📍</div>
+            <div class="c-text"><strong>Address</strong><span>12 Explorer Lane, Vienna, Austria</span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon">✉️</div>
+            <div class="c-text"><strong>Email</strong><span>hello@luminary.io</span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon">📞</div>
+            <div class="c-text"><strong>Phone</strong><span>+43 1 234 5678</span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon">🕐</div>
+            <div class="c-text"><strong>Hours</strong><span>Mon – Fri, 9am – 6pm CET</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <h4>Send us a message</h4>
+        <p>Fill in the form and we'll be in touch shortly.</p>
+        <div class="field"><label>Your Name</label><input type="text" placeholder="Full name" /></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="you@example.com" /></div>
+        <div class="field"><label>Message</label><textarea placeholder="Tell us everything…"></textarea></div>
+        <button class="form-submit" onclick="toast('Message sent! We\'ll reply within 24 hours 📬')">Send Message</button>
+      </div>
+    </div>
+
+  </div><!-- /home-sections -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" onclick="goTo('home')">Lumin<span>·</span>ary</div>
+        <p>Discover the world's most breathtaking destinations, guided by people who truly know them.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a onclick="goTo('home')">Home</a></li>
+          <li><a onclick="goTo('explore')">Explore</a></li>
+          <li><a onclick="goTo('pricing')">Pricing</a></li>
+          <li><a onclick="goTo('about')">About</a></li>
+          <li><a onclick="goTo('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a>Careers</a></li>
+          <li><a>Press</a></li>
+          <li><a>Blog</a></li>
+          <li><a>Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a>Privacy Policy</a></li>
+          <li><a>Terms of Service</a></li>
+          <li><a>Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Luminary. All rights reserved.</p>
+      <p>Made with ✦ for adventurers everywhere</p>
+    </div>
+  </footer>
+</div><!-- /page-home -->
+
+
+<!-- ══════════════════════════════════════
+     PAGE: EXPLORE
+══════════════════════════════════════ -->
+<div id="page-explore" class="page">
+  <div class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');">
+    <div class="page-banner-content">
+      <span class="section-tag">Destinations</span>
+      <h2>Explore the <em>extraordinary</em></h2>
+      <p>Hand-picked adventures across mountains, coastlines, forests, and ancient cities — every one worth the journey.</p>
+    </div>
+  </div>
+
+  <div class="full-cards-grid">
+    <div class="dest-card">
+      <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80');">
+        <span class="dest-tag">Mountain</span></div>
+      <div class="dest-body"><h4>The Alpine Circuit</h4><p>Seven peaks, four countries, one unforgettable loop through the heart of the Alps.</p></div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80');">
+        <span class="dest-tag">Coastal</span></div>
+      <div class="dest-body"><h4>Coastal Wanderer</h4><p>Follow the wild Atlantic coastline where cliffs meet the ocean in dramatic fashion.</p></div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80');">
+        <span class="dest-tag">Forest</span></div>
+      <div class="dest-body"><h4>Ancient Forest Trail</h4><p>Walk beneath thousand-year-old trees in one of the last primeval forests on Earth.</p></div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=600&q=80');">
+        <span class="dest-tag">Desert</span></div>
+      <div class="dest-body"><h4>Desert at Dawn</h4><p>Experience the silence of endless dunes as the first light paints the Sahara gold.</p></div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80');">
+        <span class="dest-tag">Island</span></div>
+      <div class="dest-body"><h4>Island Hopping</h4><p>Sail between hidden coves and sun-drenched islands across the turquoise Aegean.</p></div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=600&q=80');">
+        <span class="dest-tag">City</span></div>
+      <div class="dest-body"><h4>City of Canals</h4><p>Venice beyond the tourist trail — discover hidden courtyards and timeless craft traditions.</p></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo" onclick="goTo('home')">Lumin<span>·</span>ary</div><p>Discover the world's most breathtaking destinations.</p></div>
+      <div class="footer-col"><h5>Navigate</h5><ul>
+        <li><a onclick="goTo('home')">Home</a></li><li><a onclick="goTo('explore')">Explore</a></li>
+        <li><a onclick="goTo('pricing')">Pricing</a></li><li><a onclick="goTo('about')">About</a></li>
+        <li><a onclick="goTo('contact')">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a>Careers</a></li><li><a>Blog</a></li><li><a>Partners</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a>Privacy Policy</a></li><li><a>Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Luminary. All rights reserved.</p><p>Made with ✦ for adventurers everywhere</p></div>
+  </footer>
+</div><!-- /page-explore -->
+
+
+<!-- ══════════════════════════════════════
+     PAGE: PRICING
+══════════════════════════════════════ -->
+<div id="page-pricing" class="page">
+  <div class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80');">
+    <div class="page-banner-content">
+      <span class="section-tag">Plans &amp; Pricing</span>
+      <h2>Simple, <em>honest</em> pricing</h2>
+      <p>No hidden fees. No surprises. All plans include a 14-day free trial. Cancel anytime.</p>
+    </div>
+  </div>
+
+  <div class="full-plans-grid">
+    <div class="plan-card">
+      <div class="plan-name">Explorer</div>
+      <div class="plan-price"><sup>$</sup>0</div>
+      <div class="plan-period">forever free</div>
+      <ul class="plan-features">
+        <li>Access to 10 destinations</li>
+        <li>Basic trail maps</li>
+        <li>Community forums</li>
+        <li>Monthly newsletter</li>
+      </ul>
+      <button class="plan-btn" onclick="openModal('modal-signup')">Get Started Free</button>
+    </div>
+    <div class="plan-card featured">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-name">Adventurer</div>
+      <div class="plan-price"><sup>$</sup>12</div>
+      <div class="plan-period">per month, billed annually</div>
+      <ul class="plan-features">
+        <li>Unlimited destinations</li>
+        <li>Offline maps &amp; guides</li>
+        <li>Expert route planning</li>
+        <li>Priority support</li>
+        <li>Exclusive member events</li>
+      </ul>
+      <button class="plan-btn" onclick="toast('Adventurer plan selected! 🚀')">Start Free Trial</button>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">Luminary Pro</div>
+      <div class="plan-price"><sup>$</sup>29</div>
+      <div class="plan-period">per month, billed annually</div>
+      <ul class="plan-features">
+        <li>Everything in Adventurer</li>
+        <li>Personal guide matching</li>
+        <li>Custom itinerary builder</li>
+        <li>Concierge booking service</li>
+        <li>Annual gift &amp; gear credits</li>
+        <li>White-glove support</li>
+      </ul>
+      <button class="plan-btn" onclick="toast('Pro plan selected! 🌟')">Go Pro</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo" onclick="goTo('home')">Lumin<span>·</span>ary</div><p>Discover the world's most breathtaking destinations.</p></div>
+      <div class="footer-col"><h5>Navigate</h5><ul>
+        <li><a onclick="goTo('home')">Home</a></li><li><a onclick="goTo('explore')">Explore</a></li>
+        <li><a onclick="goTo('pricing')">Pricing</a></li><li><a onclick="goTo('about')">About</a></li>
+        <li><a onclick="goTo('contact')">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Plans</h5><ul><li><a>Explorer (Free)</a></li><li><a>Adventurer</a></li><li><a>Pro</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a>Privacy Policy</a></li><li><a>Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Luminary. All rights reserved.</p><p>Made with ✦ for adventurers everywhere</p></div>
+  </footer>
+</div><!-- /page-pricing -->
+
+
+<!-- ══════════════════════════════════════
+     PAGE: ABOUT
+══════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80');">
+    <div class="page-banner-content">
+      <span class="section-tag">Our Story</span>
+      <h2>Built by explorers,<br><em>for explorers</em></h2>
+      <p>Luminary began on a rain-soaked ridge in Patagonia. A group of friends, lost and laughing, decided the world needed better guides.</p>
+    </div>
+  </div>
+
+  <div class="about-full">
+    <div class="about-full-grid">
+      <div class="about-full-text">
+        <span class="section-tag">Why we exist</span>
+        <h2 class="section-title" style="margin-bottom:20px;">The story behind <em>Luminary</em></h2>
+        <p>Travel has become too transactional. Bucket lists, fast check-ins, filtered photos — we believe in slow discovery. In the detour that changes everything. In conversations with strangers who become lifelong friends.</p>
+        <p>Luminary was built to help you find those moments. Our platform connects curious travellers with local experts, hand-curated routes, and a community that values depth over breadth.</p>
+        <p>Since 2021, we've helped over 180,000 explorers find their way — from the peaks of the Dolomites to the alleys of Marrakech. Every route on our platform has been walked, paddled, or climbed by a real human being who cares about sharing it honestly.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="stat-num">180k</div><div class="stat-lbl">Explorers</div></div>
+        <div class="stat-box"><div class="stat-num">94</div><div class="stat-lbl">Countries</div></div>
+        <div class="stat-box"><div class="stat-num">4,200+</div><div class="stat-lbl">Routes</div></div>
+        <div class="stat-box"><div class="stat-num">4.9★</div><div class="stat-lbl">Avg Rating</div></div>
+      </div>
+    </div>
+
+    <span class="section-tag">The people behind Luminary</span>
+    <h2 class="section-title" style="margin-bottom:24px;">Meet the <em>team</em></h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80');"></div>
+        <div class="team-info"><h4>Marcus Reid</h4><p>Co-founder &amp; CEO</p></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80');"></div>
+        <div class="team-info"><h4>Sofia Almeida</h4><p>Head of Experiences</p></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background-image:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80');"></div>
+        <div class="team-info"><h4>James Okafor</h4><p>Lead Engineer</p></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background-image:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80');"></div>
+        <div class="team-info"><h4>Yuki Tanaka</h4><p>Design Director</p></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo" onclick="goTo('home')">Lumin<span>·</span>ary</div><p>Discover the world's most breathtaking destinations.</p></div>
+      <div class="footer-col"><h5>Navigate</h5><ul>
+        <li><a onclick="goTo('home')">Home</a></li><li><a onclick="goTo('explore')">Explore</a></li>
+        <li><a onclick="goTo('pricing')">Pricing</a></li><li><a onclick="goTo('about')">About</a></li>
+        <li><a onclick="goTo('contact')">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a>Careers</a></li><li><a>Blog</a></li><li><a>Press</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a>Privacy Policy</a></li><li><a>Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Luminary. All rights reserved.</p><p>Made with ✦ for adventurers everywhere</p></div>
+  </footer>
+</div><!-- /page-about -->
+
+
+<!-- ══════════════════════════════════════
+     PAGE: CONTACT
+══════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1920&q=80');">
+    <div class="page-banner-content">
+      <span class="section-tag">Get in Touch</span>
+      <h2>We'd love to <em>hear from you</em></h2>
+      <p>Our team reads every message. Expect a real reply within 24 hours.</p>
+    </div>
+  </div>
+
+  <div class="contact-full">
+    <div class="contact-full-info">
+      <h3>Let's start a conversation</h3>
+      <p>We're a small, passionate team and we genuinely care about every person who reaches out.</p>
+      <div class="contact-items">
+        <div class="c-item">
+          <div class="c-icon">📍</div>
+          <div class="c-text"><strong>Address</strong><span>12 Explorer Lane, Vienna, Austria</span></div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">✉️</div>
+          <div class="c-text"><strong>Email</strong><span>hello@luminary.io</span></div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">📞</div>
+          <div class="c-text"><strong>Phone</strong><span>+43 1 234 5678</span></div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">🕐</div>
+          <div class="c-text"><strong>Hours</strong><span>Mon – Fri, 9am – 6pm CET</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-full-form">
+      <h4>Send us a message</h4>
+      <p>Fill in the form and we'll get back to you shortly.</p>
+      <div class="field"><label>Your Name</label><input type="text" placeholder="Full name" /></div>
+      <div class="field"><label>Email Address</label><input type="email" placeholder="you@example.com" /></div>
+      <div class="field"><label>Subject</label><input type="text" placeholder="What's this about?" /></div>
+      <div class="field"><label>Message</label><textarea placeholder="Tell us everything…"></textarea></div>
+      <button class="form-submit" onclick="toast('Message sent! We\'ll reply within 24 hours 📬')">Send Message</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo" onclick="goTo('home')">Lumin<span>·</span>ary</div><p>Discover the world's most breathtaking destinations.</p></div>
+      <div class="footer-col"><h5>Navigate</h5><ul>
+        <li><a onclick="goTo('home')">Home</a></li><li><a onclick="goTo('explore')">Explore</a></li>
+        <li><a onclick="goTo('pricing')">Pricing</a></li><li><a onclick="goTo('about')">About</a></li>
+        <li><a onclick="goTo('contact')">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a>Careers</a></li><li><a>Blog</a></li><li><a>Partners</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a>Privacy Policy</a></li><li><a>Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Luminary. All rights reserved.</p><p>Made with ✦ for adventurers everywhere</p></div>
+  </footer>
+</div><!-- /page-contact -->
+
+
+<!-- ══════════════════════════════════════
+     MODAL: LOGIN
+══════════════════════════════════════ -->
+<div id="modal-login" class="modal-overlay" onclick="overlayClose(event, 'modal-login')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-login')">✕</button>
+    <h2>Welcome back</h2>
+    <p class="modal-sub">Sign in to continue your journey.</p>
+    <div class="field"><label>Email Address</label><input type="email" placeholder="you@example.com" /></div>
+    <div class="field"><label>Password</label><input type="password" placeholder="••••••••" /></div>
+    <div style="text-align:right;margin-bottom:12px;">
+      <a style="font-size:0.75rem;color:var(--gold);cursor:pointer;">Forgot password?</a>
+    </div>
+    <button class="form-submit" onclick="closeModal('modal-login'); toast('Logged in successfully! 🎉')">Log In</button>
+    <p class="modal-footer">Don't have an account? <a onclick="switchModal('modal-login','modal-signup')">Sign up free →</a></p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL: SIGN UP
+══════════════════════════════════════ -->
+<div id="modal-signup" class="modal-overlay" onclick="overlayClose(event, 'modal-signup')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-signup')">✕</button>
+    <h2>Join Luminary</h2>
+    <p class="modal-sub">Create your free account and start exploring.</p>
+    <div class="field"><label>Full Name</label><input type="text" placeholder="Your name" /></div>
+    <div class="field"><label>Email Address</label><input type="email" placeholder="you@example.com" /></div>
+    <div class="field"><label>Password</label><input type="password" placeholder="Create a password" /></div>
+    <div class="field"><label>Confirm Password</label><input type="password" placeholder="Repeat your password" /></div>
+    <button class="form-submit" onclick="closeModal('modal-signup'); toast('Account created! Welcome to Luminary 🌟')">Create Account</button>
+    <p class="modal-footer">Already have an account? <a onclick="switchModal('modal-signup','modal-login')">Log in →</a></p>
+  </div>
+</div>
+
+
+<!-- TOAST -->
+<div class="toast" id="toast-el"></div>
+
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+  /* ── Page Router ── */
+  const pages = ['home','explore','pricing','about','contact'];
+
+  function goTo(id) {
+    pages.forEach(p => {
+      document.getElementById('page-' + p).classList.toggle('active', p === id);
+      const nl = document.getElementById('nl-' + p);
+      if (nl) nl.classList.toggle('active', p === id);
+    });
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  /* ── Modal ── */
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function switchModal(from, to) {
+    closeModal(from);
+    setTimeout(() => openModal(to), 180);
+  }
+  function overlayClose(e, id) {
+    if (e.target === document.getElementById(id)) closeModal(id);
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      ['modal-login','modal-signup'].forEach(closeModal);
+    }
+  });
+
+  /* ── Toast ── */
+  function toast(msg) {
+    const el = document.getElementById('toast-el');
+    el.textContent = msg;
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 3000);
+  }
+</script>
+
+</body>
+</html>
